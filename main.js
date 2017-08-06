@@ -78,7 +78,8 @@ const vm = new Vue({
     /*curr leaf, render its child*/
     currItem: tree,
     /*for go back */
-    path: []
+    path: [],
+    selected: []
   },
 
   methods: {
@@ -103,6 +104,31 @@ const vm = new Vue({
        if (this.state === 1) {
          this.state = 0;
        };
+    },
+
+    addDish(index) {
+      const selectedItem = this.currItem.children[index];
+      const indexInSelected = this.selected.findIndex(it => it.content === selectedItem.content);
+      if (indexInSelected === -1) {
+        this.selected.push({
+          content: selectedItem.content,
+          amount: 1
+        });
+      } else {
+        this.selected[indexInSelected].amount++;
+      };
+    },
+
+    removeDish(index) {
+      const item = this.selected[index];
+      item.amount--;
+      if (item.amount < 1) {
+        this.selected.splice(index, 1);
+      };
+    },
+
+    removeAllDishes() {
+      this.selected = [];
     }
   }
 });

@@ -4,55 +4,16 @@
   justify-content: center;
 }
 
-.containerSize {
-  width: 80%;
-  min-height: 400px;
-  margin: 0 auto;
-}
-
-.square {
-  width: 50px;
-  height: 50px;
-}
-
 .thinBorder {
   border: 1px solid black;
 }
 
-.red {
-  background: red;
-}
-
-.orange {
-  background: orange;
-}
-
-.yellow {
-  background: yellow;
-}
-
-.green {
-  background: limegreen;
-}
-
-.cyan {
-  background: cyan;
-}
-
-.blue {
-  background: blue;
-}
-
-.orchid {
-  background: orchid;
-}
-
 .leftColumn {
-
+  background-color: orchid;
 }
 
-.rightColimn {
-
+.rightColumn {
+  background-color: silver;
 }
 
 .dishGroup:hover {

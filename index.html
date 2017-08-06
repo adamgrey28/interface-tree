@@ -7,24 +7,43 @@
 </head>
 <body>
   <div id="app" class="thinBorder">
-    <ul>
-      <div v-if="state === 0" class='state1'>
-        <li 
-          v-for='(dish, index) in currItem.children'
-          class='pointer dishGroup' 
-          @click='goFurther(index)'>
-          {{dish.content}} 
-        </li>
+
+    <div class="flexContainer">
+      <div class="leftColumn">
+        <ol>
+          <li 
+            v-for='(dish, index) in selected'
+            @click='removeDish(index)'>
+              {{`Dish: ${dish.content}, amount: ${dish.amount}`}}
+          </li>
+        </ol>
       </div>
-      <div v-else class='state2'>
-        <li 
-          v-for='dish in currItem.children'
-          class="pointer dishItem">
-            {{dish.content}} 
-        </li>
-      </div>
-      <button v-if='path.length' @click="goBack">Go back</button>
-    </ul>
+
+      <div class="rightColumn">
+        <ul>
+          <div v-if="state === 0" class='state1'>
+            <li 
+              v-for='(dish, index) in currItem.children'
+              class='pointer dishGroup' 
+              @click='goFurther(index)'>
+              {{dish.content}} 
+            </li>
+          </div>
+          <div v-else class='state2'>
+            <li 
+              v-for='(dish, index) in currItem.children'
+              @click='addDish(index)'
+              class="pointer dishItem">
+                {{dish.content}} 
+            </li>
+          </div>
+        </ul>
+        <button v-if='path.length' @click="goBack">Go back</button>
+        </div>
+
+    
+  </div>
+
   </div>
 
   <script src="node_modules/vue/dist/vue.js"></script>
