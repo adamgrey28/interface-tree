@@ -23,7 +23,7 @@
             {{dish.content}} 
         </li>
       </div>
-      <button v-if='lastIndex >= 0' @click="goBack">Go back</button>
+      <button v-if='prevItem' @click="goBack">Go back</button>
     </ul>
   </div>
 
