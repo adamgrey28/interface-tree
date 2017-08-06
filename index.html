@@ -19,8 +19,7 @@
       <div v-else class='state2'>
         <li 
           class="pointer dishItem" 
-          v-for='(dish, index) in currItem.children' 
-          @click='goBack(index)'>
+          v-for='(dish, index) in currItem.children'>
             {{dish.content}} 
         </li>
       </div>

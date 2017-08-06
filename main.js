@@ -89,13 +89,13 @@ const vm = new Vue({
           this.state = 1;
         };
       }
-    },
+    }/* , */
 
-    goBack(index) {
+   /*  goBack(index) {
       if (this.currItem.content !== '') {
         this.currItem = this.prevItem;
         this.prevItem = this.currItem.children[index];
       };
-    }
+    } */
   }
 });
