@@ -18,12 +18,12 @@
       </div>
       <div v-else class='state2'>
         <li 
-          v-for='(dish, index) in currItem.children'
+          v-for='dish in currItem.children'
           class="pointer dishItem">
             {{dish.content}} 
         </li>
       </div>
-      <button v-if='prevItem' @click="goBack">Go back</button>
+      <button v-if='path.length' @click="goBack">Go back</button>
     </ul>
   </div>
 
