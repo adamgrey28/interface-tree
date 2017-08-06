@@ -10,19 +10,20 @@
     <ul>
       <div v-if="state === 0" class='state1'>
         <li 
+          v-for='(dish, index) in currItem.children'
           class='pointer dishGroup' 
-          v-for='(dish, index) in currItem.children' 
           @click='goFurther(index)'>
           {{dish.content}} 
         </li>
       </div>
       <div v-else class='state2'>
         <li 
-          class="pointer dishItem" 
-          v-for='(dish, index) in currItem.children'>
+          v-for='(dish, index) in currItem.children'
+          class="pointer dishItem">
             {{dish.content}} 
         </li>
       </div>
+      <button v-if='lastIndex >= 0' @click="goBack">Go back</button>
     </ul>
   </div>
 

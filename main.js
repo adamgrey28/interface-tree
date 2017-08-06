@@ -73,7 +73,7 @@ const vm = new Vue({
     tree: tree,
     state: 0,
     currItem: tree,
-    prevItem: null
+    lastIndex: -1
   },
 
   methods: {
@@ -85,17 +85,19 @@ const vm = new Vue({
       if (this.currItem.children[index].children !== null) {
         this.prevItem = this.currItem;
         this.currItem = this.currItem.children[index];
+        this.lastIndex = index;
         if (this.currItem.children[index].children === null) {
           this.state = 1;
         };
       }
-    }/* , */
+    },
 
-   /*  goBack(index) {
-      if (this.currItem.content !== '') {
-        this.currItem = this.prevItem;
-        this.prevItem = this.currItem.children[index];
-      };
-    } */
+     goBack() {
+       this.currItem = this.prevItem;
+       this.prevItem = this.currItem.children[this.lastIndex];
+       if (this.currItem.content === '') {
+         this.lastIndex = -1;
+       };
+    } 
   }
 });
