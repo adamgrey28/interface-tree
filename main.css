@@ -1,8 +1,7 @@
 .flexContainer {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .containerSize {
@@ -46,4 +45,24 @@
 
 .orchid {
   background: orchid;
+}
+
+.leftColumn {
+
+}
+
+.rightColimn {
+
+}
+
+.dishGroup:hover {
+  background-color: orchid;
+}
+
+.dishItem:hover {
+  background-color: orange;
+}
+
+.pointer {
+  cursor: pointer;
 }

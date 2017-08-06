@@ -6,17 +6,28 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <div class="flexContainer containerSize thinBorder">
-      <div class='red square'> </div>
-      <div class='orange square'> </div>
-      <div class='yellow square'> </div>
-      <div class='green square'> </div>
-      <div class='cyan square'> </div>
-      <div class="blue square"></div>
-      <div class='orchid square'> </div>
+  <div id="app" class="thinBorder">
+    <ul>
+      <div v-if="state === 0" class='state1'>
+        <li 
+          class='pointer dishGroup' 
+          v-for='(dish, index) in currItem.children' 
+          @click='goFurther(index)'>
+          {{dish.content}} 
+        </li>
+      </div>
+      <div v-else class='state2'>
+        <li 
+          class="pointer dishItem" 
+          v-for='(dish, index) in currItem.children' 
+          @click='goBack(index)'>
+            {{dish.content}} 
+        </li>
+      </div>
+    </ul>
   </div>
 
-
+  <script src="node_modules/vue/dist/vue.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
