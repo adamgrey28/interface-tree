@@ -10,10 +10,16 @@
 
 .leftColumn {
   background-color: orchid;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .rightColumn {
   background-color: silver;
+  width: 50%;
 }
 
 .dishGroup:hover {
@@ -26,4 +32,25 @@
 
 .pointer:hover {
   cursor: pointer;
+}
+
+.centingText {
+  text-align: center;
+}
+
+header {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.mainSize {
+  margin: 0 10% 10%;
+}
+
+.highlightOnHover:hover {
+  background-color: cadetblue;
+}
+
+.disalowUserSelect {
+  user-select: none;
 }

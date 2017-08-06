@@ -10,10 +10,10 @@
 
     <div class="flexContainer mainSize">
       <div class="leftColumn">
-        <h3>Выбранные блюда:</h3>
+        <header class='centingText'>Выбранные блюда:</header>
         <ol>
           <li 
-            class='pointer'
+            class='pointer highlightOnHover disalowUserSelect'
             v-for='(dish, index) in selected'
             @click='removeDish(index)'>
               {{`Dish: ${dish.content}, amount: ${dish.amount}`}}
@@ -23,12 +23,12 @@
       </div>
 
       <div class="rightColumn">
-        <h3>Выберите блюдо из списка: </h3>
+        <header class='centingText'>Выберите блюдо из списка: </header>
         <ul>
           <div v-if="state === 0" class='state1'>
             <li 
               v-for='(dish, index) in currItem.children'
-              class='pointer dishGroup' 
+              class='pointer dishGroup disalowUserSelect' 
               @click='goFurther(index)'>
               {{dish.content}} 
             </li>
@@ -37,7 +37,7 @@
             <li 
               v-for='(dish, index) in currItem.children'
               @click='addDish(index)'
-              class="pointer dishItem">
+              class="pointer dishItem disalowUserSelect">
                 {{dish.content}} 
             </li>
           </div>
