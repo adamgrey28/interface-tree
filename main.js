@@ -79,7 +79,8 @@ const vm = new Vue({
     currItem: tree,
     /*for go back */
     path: [],
-    selected: []
+    selected: [],
+    selectedCash: []
   },
 
   methods: {
@@ -129,6 +130,10 @@ const vm = new Vue({
 
     removeAllDishes() {
       this.selected = [];
+    },
+
+    undoSelected() {
+      this.selected = this.selectedCash;
     }
   }
 });

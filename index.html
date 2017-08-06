@@ -8,18 +8,22 @@
 <body>
   <div id="app" class="thinBorder">
 
-    <div class="flexContainer">
+    <div class="flexContainer mainSize">
       <div class="leftColumn">
+        <h3>Выбранные блюда:</h3>
         <ol>
           <li 
+            class='pointer'
             v-for='(dish, index) in selected'
             @click='removeDish(index)'>
               {{`Dish: ${dish.content}, amount: ${dish.amount}`}}
           </li>
         </ol>
+        <button v-if='selected.length' @click='removeAllDishes'>Удалить все</button>
       </div>
 
       <div class="rightColumn">
+        <h3>Выберите блюдо из списка: </h3>
         <ul>
           <div v-if="state === 0" class='state1'>
             <li 

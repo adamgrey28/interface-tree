@@ -24,6 +24,6 @@
   background-color: orange;
 }
 
-.pointer {
+.pointer:hover {
   cursor: pointer;
 }
